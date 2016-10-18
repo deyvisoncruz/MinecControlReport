@@ -6,6 +6,10 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using MinecControlReport.Models;
+using MineControlReport.Models;
+
 
 namespace MinecControlReport
 {
@@ -23,6 +27,8 @@ namespace MinecControlReport
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+            //adicionado para ajudar quando alteramos uma estrutura no EntityFramework
+            //Database.SetInitializer<MineControlReportContext>(new DropCreateDatabaseIfModelChanges<MineControlReportContext>());
         }
     }
 }

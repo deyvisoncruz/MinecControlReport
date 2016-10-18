@@ -1,0 +1,29 @@
+﻿@model MinecControlReport.Models.kpis
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>kpis</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.KpiName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.KpiName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.KpiStatus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.KpiStatus)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.KpiId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
