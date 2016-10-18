@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/DataTables-1.10.7/media/js/jquery.dataTables.min.js")
+        
+        @Styles.Render("$(document).ready(function(){    $('#myTable').DataTable();});")
+
+
+
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+       
+
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("Mining Control", "Index", "Home")  <span style="color:#FFCB08">Report</span>           </p>
+                </div> 
+                <div class="float-right"><p class="site-title"> @DateTime.Now.ToString()</p>  </br>
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                       <div class="drop">
+                        <ul class="drop_menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")
+                                <ul>
+                                    <li><a>teste</a></li>
+                                    <li><a>teste2</a></li>
+
+                                </ul>
+
+                            </li>                            
+                            <li><a href="#">Metas</a>
+                                <ul>
+                                    <li>@Html.ActionLink("Metas", "Index", "Goal")</li>
+                                    <li>@Html.ActionLink("Períodos", "Index", "PeriodTime")</li>
+                                    <li>@Html.ActionLink("Kpi's", "Index", "Kpis")</li>        
+                                </ul>
+                            </li>            
+                            <li>@Html.ActionLink("Nível/Acesso", "Index", "UserLevel")</li>                                       
+                            <li>@Html.ActionLink("Nível/Usuário", "Index", "UserAccountLevel")</li>     
+                            <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                        </ul>
+                           </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - Mining Control Report</p>
+                </div>
+            </div>
+        </footer>
+        
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryval")
+        @RenderSection("scripts", required: false)
+        
+    </body>
+</html>
