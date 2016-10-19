@@ -1,0 +1,55 @@
+﻿@model MinecControlReport.Models.kpis
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+             </br>
+            <hgroup class="title">
+               
+                <h3>@ViewBag.Message </h3>
+            </hgroup>
+            </br>
+        </div>
+    </section>
+}
+
+
+<fieldset>
+    <legend>kpis</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.KpiName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.KpiName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descr)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descr)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Unity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Unity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Token)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Token)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.KpiId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

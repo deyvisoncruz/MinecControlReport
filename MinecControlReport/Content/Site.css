@@ -797,7 +797,17 @@ tr.pager td {
    text-align:center;
 }
 
+#cadastros {
+   height:     75px;
+   background: #eff7fa;
+   height: 800px;
+   width: 1000px;
+   text-align:center;
+}
+#cadastros a{
 
+    color:#52a4ca;
+}
 
 .drop_menu {
 background:#FFFFFF;

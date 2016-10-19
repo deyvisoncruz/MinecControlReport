@@ -28,7 +28,7 @@ namespace MinecControlReport
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
             //adicionado para ajudar quando alteramos uma estrutura no EntityFramework
-            //Database.SetInitializer<MineControlReportContext>(new DropCreateDatabaseIfModelChanges<MineControlReportContext>());
+            Database.SetInitializer<MineControlReportContext>(new DropCreateDatabaseIfModelChanges<MineControlReportContext>());
         }
     }
 }

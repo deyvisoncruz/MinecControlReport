@@ -10,24 +10,27 @@ using MineControlReport.Models;
 
 namespace MinecControlReport.Controllers
 {
-    public class Default1Controller : Controller
+    public class KpisController : Controller
     {
         private MineControlReportContext db = new MineControlReportContext();
 
         //
-        // GET: /Default1/
+        // GET: /Kpis/
 
         public ActionResult Index()
         {
-            return View(db.PeriodTime.ToList());
+            ViewBag.Message = "Customize seus índices";
+            return View(db.kpis.ToList());
         }
 
         //
-        // GET: /Default1/Details/5
+        // GET: /Kpis/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            kpis kpis = db.PeriodTime.Find(id);
+
+            ViewBag.Message = "Detalhes do Kpi";
+            kpis kpis = db.kpis.Find(id);
             if (kpis == null)
             {
                 return HttpNotFound();
@@ -36,15 +39,16 @@ namespace MinecControlReport.Controllers
         }
 
         //
-        // GET: /Default1/Create
+        // GET: /Kpis/Create
 
         public ActionResult Create()
         {
+            ViewBag.Message = "Cadastre seus Kpis";
             return View();
         }
 
         //
-        // POST: /Default1/Create
+        // POST: /Kpis/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -52,7 +56,7 @@ namespace MinecControlReport.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.PeriodTime.Add(kpis);
+                db.kpis.Add(kpis);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -61,11 +65,12 @@ namespace MinecControlReport.Controllers
         }
 
         //
-        // GET: /Default1/Edit/5
+        // GET: /Kpis/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            kpis kpis = db.PeriodTime.Find(id);
+            ViewBag.Message = "Editar Kpi";
+            kpis kpis = db.kpis.Find(id);
             if (kpis == null)
             {
                 return HttpNotFound();
@@ -74,7 +79,7 @@ namespace MinecControlReport.Controllers
         }
 
         //
-        // POST: /Default1/Edit/5
+        // POST: /Kpis/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -90,11 +95,12 @@ namespace MinecControlReport.Controllers
         }
 
         //
-        // GET: /Default1/Delete/5
+        // GET: /Kpis/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            kpis kpis = db.PeriodTime.Find(id);
+            ViewBag.Message = "Remover Kpis";
+            kpis kpis = db.kpis.Find(id);
             if (kpis == null)
             {
                 return HttpNotFound();
@@ -103,14 +109,14 @@ namespace MinecControlReport.Controllers
         }
 
         //
-        // POST: /Default1/Delete/5
+        // POST: /Kpis/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            kpis kpis = db.PeriodTime.Find(id);
-            db.PeriodTime.Remove(kpis);
+            kpis kpis = db.kpis.Find(id);
+            db.kpis.Remove(kpis);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

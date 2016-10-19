@@ -20,6 +20,6 @@ namespace MineControlReport.Models
         }
 
 
-        public DbSet<kpis> PeriodTime { get; set; }
+        public DbSet<kpis> kpis { get; set; }
     }
 }

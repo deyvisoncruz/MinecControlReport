@@ -1,0 +1,74 @@
+﻿@model MinecControlReport.Models.kpis
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+             </br>
+            <hgroup class="title">
+               
+                <h3>@ViewBag.Message </h3>
+            </hgroup>
+            </br>
+        </div>
+    </section>
+}
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>kpis</legend>
+
+        @Html.HiddenFor(model => model.KpiId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.KpiName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.KpiName)
+            @Html.ValidationMessageFor(model => model.KpiName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descr)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descr)
+            @Html.ValidationMessageFor(model => model.Descr)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Unity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Unity)
+            @Html.ValidationMessageFor(model => model.Unity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Token)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Token)
+            @Html.ValidationMessageFor(model => model.Token)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,59 @@
+﻿@model MinecControlReport.Models.kpis
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+             </br>
+            <hgroup class="title">
+               
+                <h3>@ViewBag.Message </h3>
+            </hgroup>
+            </br>
+        </div>
+    </section>
+}
+
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>kpis</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.KpiName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.KpiName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descr)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descr)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Unity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Unity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Token)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Token)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -23,18 +23,16 @@ namespace MinecControlReport.Models
 
         [Required]
         [Display(Name = "Descrição")]
-        public String Descr;
+        public String Descr { get; set; }
 
         [Display(Name = "Unidade")]
-        public String Unity;
+        public String Unity { get; set; }
 
-        [Key]
+
         [Required]
-        [Display(Name = "Chave")]
-        public String Token;
+        [Display(Name = "Token")]
+        public String Token { get; set; }
 
 
-        [Display(Name = "Status")]
-        public int KpiStatus { get; set; }
     }
 }
