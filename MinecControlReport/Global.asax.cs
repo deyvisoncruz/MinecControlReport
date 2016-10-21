@@ -8,7 +8,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Data.Entity;
 using MinecControlReport.Models;
-using MineControlReport.Models;
+using MinecControlReport.Models;
 
 
 namespace MinecControlReport

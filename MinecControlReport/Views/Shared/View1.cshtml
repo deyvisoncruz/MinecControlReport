@@ -1,0 +1,16 @@
+﻿@model IEnumerable<MinecControlReport.Models.menu> 
+
+
+ @if (Model == null)
+ {
+      <li><a href="#"> Teste</a></li>
+ }
+else
+ {
+    foreach (var item in Model) {
+        <li><a href="  @Html.DisplayFor(modelItem => item.Link)"> @Html.DisplayFor(modelItem => item.Name)</a></li>
+            
+          
+    }
+ }
+    

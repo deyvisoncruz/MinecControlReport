@@ -1,7 +1,7 @@
 ﻿using MinecControlReport.Models;
 using System.Data.Entity;
 
-namespace MineControlReport.Models
+namespace MinecControlReport.Models
 {
     public class MineControlReportContext : DbContext
     {
@@ -21,5 +21,7 @@ namespace MineControlReport.Models
 
 
         public DbSet<kpis> kpis { get; set; }
+        public DbSet<menu> menu { get; set; }
+        public DbSet<menuReport> menuReport { get; set; }
     }
 }

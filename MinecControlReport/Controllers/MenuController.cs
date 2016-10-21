@@ -10,113 +10,107 @@ using MinecControlReport.Models;
 
 namespace MinecControlReport.Controllers
 {
-    public class KpisController : Controller
+    public class MenuController : Controller
     {
         private MineControlReportContext db = new MineControlReportContext();
 
         //
-        // GET: /Kpis/
+        // GET: /Menu/
 
         public ActionResult Index()
         {
-            ViewBag.Message = "Customize seus índices";
-            return View(db.kpis.ToList());
+            return View(db.menu.ToList());
         }
 
         //
-        // GET: /Kpis/Details/5
+        // GET: /Menu/Details/5
 
         public ActionResult Details(int id = 0)
         {
-
-            ViewBag.Message = "Detalhes do Kpi";
-            kpis kpis = db.kpis.Find(id);
-            if (kpis == null)
+            menu menu = db.menu.Find(id);
+            if (menu == null)
             {
                 return HttpNotFound();
             }
-            return View(kpis);
+            return View(menu);
         }
 
         //
-        // GET: /Kpis/Create
+        // GET: /Menu/Create
 
         public ActionResult Create()
         {
-            ViewBag.Message = "Cadastre seus Kpis";
             return View();
         }
 
         //
-        // POST: /Kpis/Create
+        // POST: /Menu/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(kpis kpis)
+        public ActionResult Create(menu menu)
         {
             if (ModelState.IsValid)
             {
-                db.kpis.Add(kpis);
+                db.menu.Add(menu);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(kpis);
+            return View(menu);
         }
 
         //
-        // GET: /Kpis/Edit/5
+        // GET: /Menu/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            ViewBag.Message = "Editar Kpi";
-            kpis kpis = db.kpis.Find(id);
-            if (kpis == null)
+            menu menu = db.menu.Find(id);
+            if (menu == null)
             {
                 return HttpNotFound();
             }
-            return View(kpis);
+            return View(menu);
         }
 
         //
-        // POST: /Kpis/Edit/5
+        // POST: /Menu/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(kpis kpis)
+        public ActionResult Edit(menu menu)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(kpis).State = EntityState.Modified;
+                db.Entry(menu).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(kpis);
+            return View(menu);
         }
 
         //
-        // GET: /Kpis/Delete/5
+        // GET: /Menu/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            ViewBag.Message = "Remover Kpis";
-            kpis kpis = db.kpis.Find(id);
-            if (kpis == null)
+            menu menu = db.menu.Find(id);
+            if (menu == null)
             {
                 return HttpNotFound();
             }
-            return View(kpis);
+            return View(menu);
         }
 
         //
-        // POST: /Kpis/Delete/5
+        // POST: /Menu/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            kpis kpis = db.kpis.Find(id);
-            db.kpis.Remove(kpis);
+            menu menu = db.menu.Find(id);
+            db.menu.Remove(menu);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -185,12 +185,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KpisController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\MenuReportController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\kpis.cs" />
+    <Compile Include="Models\menu.cs" />
+    <Compile Include="Models\menuList.cs" />
+    <Compile Include="Models\menuReport.cs" />
     <Compile Include="Models\MinecControlReportContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -310,9 +315,22 @@
     <Content Include="Views\Kpis\Create.cshtml" />
     <Content Include="Views\Kpis\Edit.cshtml" />
     <Content Include="Views\Kpis\Delete.cshtml" />
+    <Content Include="Views\Menu\Index.cshtml" />
+    <Content Include="Views\Menu\Details.cshtml" />
+    <Content Include="Views\Menu\Create.cshtml" />
+    <Content Include="Views\Menu\Edit.cshtml" />
+    <Content Include="Views\Menu\Delete.cshtml" />
+    <Content Include="Views\MenuReport\Index.cshtml" />
+    <Content Include="Views\MenuReport\Details.cshtml" />
+    <Content Include="Views\MenuReport\Create.cshtml" />
+    <Content Include="Views\MenuReport\Edit.cshtml" />
+    <Content Include="Views\MenuReport\Delete.cshtml" />
+    <Content Include="Views\Shared\View1.cshtml" />
+    <Content Include="Views\Home\MenuList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,0 +1,17 @@
+﻿@model MinecControlReport.Models.menu
+
+
+<ul class="drop_menu">
+                            @Html.Raw(ViewBag.Menu)
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>                            
+                            <li><a href="#">Metas</a>
+                                <ul>
+                                    <li>@Html.ActionLink("Metas", "Index", "Goal")</li>
+                                    <li>@Html.ActionLink("Períodos", "Index", "PeriodTime")</li>
+                                    <li>@Html.ActionLink("Kpi's", "Index", "Kpis")</li>        
+                                </ul>
+                            </li>            
+                            <li>@Html.ActionLink("Nível/Acesso", "Index", "UserLevel")</li>                                       
+                            <li>@Html.ActionLink("Nível/Usuário", "Index", "UserAccountLevel")</li>     
+                            <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                        </ul>

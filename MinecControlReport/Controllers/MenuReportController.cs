@@ -10,113 +10,112 @@ using MinecControlReport.Models;
 
 namespace MinecControlReport.Controllers
 {
-    public class KpisController : Controller
+    public class MenuReportController : Controller
     {
         private MineControlReportContext db = new MineControlReportContext();
 
         //
-        // GET: /Kpis/
+        // GET: /MenuReport/
 
         public ActionResult Index()
         {
-            ViewBag.Message = "Customize seus índices";
-            return View(db.kpis.ToList());
+            var menureport = db.menuReport.Include(m => m.menu);
+            return View(menureport.ToList());
         }
 
         //
-        // GET: /Kpis/Details/5
+        // GET: /MenuReport/Details/5
 
         public ActionResult Details(int id = 0)
         {
-
-            ViewBag.Message = "Detalhes do Kpi";
-            kpis kpis = db.kpis.Find(id);
-            if (kpis == null)
+            menuReport menureport = db.menuReport.Find(id);
+            if (menureport == null)
             {
                 return HttpNotFound();
             }
-            return View(kpis);
+            return View(menureport);
         }
 
         //
-        // GET: /Kpis/Create
+        // GET: /MenuReport/Create
 
         public ActionResult Create()
         {
-            ViewBag.Message = "Cadastre seus Kpis";
+            ViewBag.MenuRefId = new SelectList(db.menu, "Id", "Name");
             return View();
         }
 
         //
-        // POST: /Kpis/Create
+        // POST: /MenuReport/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(kpis kpis)
+        public ActionResult Create(menuReport menureport)
         {
             if (ModelState.IsValid)
             {
-                db.kpis.Add(kpis);
+                db.menuReport.Add(menureport);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(kpis);
+            ViewBag.MenuRefId = new SelectList(db.menu, "Id", "Name", menureport.MenuRefId);
+            return View(menureport);
         }
 
         //
-        // GET: /Kpis/Edit/5
+        // GET: /MenuReport/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            ViewBag.Message = "Editar Kpi";
-            kpis kpis = db.kpis.Find(id);
-            if (kpis == null)
+            menuReport menureport = db.menuReport.Find(id);
+            if (menureport == null)
             {
                 return HttpNotFound();
             }
-            return View(kpis);
+            ViewBag.MenuRefId = new SelectList(db.menu, "Id", "Name", menureport.MenuRefId);
+            return View(menureport);
         }
 
         //
-        // POST: /Kpis/Edit/5
+        // POST: /MenuReport/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(kpis kpis)
+        public ActionResult Edit(menuReport menureport)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(kpis).State = EntityState.Modified;
+                db.Entry(menureport).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(kpis);
+            ViewBag.MenuRefId = new SelectList(db.menu, "Id", "Name", menureport.MenuRefId);
+            return View(menureport);
         }
 
         //
-        // GET: /Kpis/Delete/5
+        // GET: /MenuReport/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            ViewBag.Message = "Remover Kpis";
-            kpis kpis = db.kpis.Find(id);
-            if (kpis == null)
+            menuReport menureport = db.menuReport.Find(id);
+            if (menureport == null)
             {
                 return HttpNotFound();
             }
-            return View(kpis);
+            return View(menureport);
         }
 
         //
-        // POST: /Kpis/Delete/5
+        // POST: /MenuReport/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            kpis kpis = db.kpis.Find(id);
-            db.kpis.Remove(kpis);
+            menuReport menureport = db.menuReport.Find(id);
+            db.menuReport.Remove(menureport);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
