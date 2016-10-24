@@ -14,10 +14,12 @@ namespace MinecControlReport.Controllers
         private List<menuList> ml = new List<menuList>();
         private List<menu> m = new List<menu>();
         private List<subMenuList> subml = new List<subMenuList>();
-        public ActionResult Index()
+
+
+        public ActionResult Index(string Id = "DailyMining")
         {
             ViewBag.Message = "Bem vindo ao módulo de relatórios!";
-
+            ViewBag.Report = "http://localhost:2672/Reports/ReportView.aspx?report="+Id;
             return View();
         }
 
@@ -39,6 +41,7 @@ namespace MinecControlReport.Controllers
         {
            var queryMenu = db.menu.OrderBy(p=>p.Order);
            string dinamicMenu = "";
+           string url = Request.Url.AbsoluteUri.ToString();
            foreach (menu c in queryMenu)
            {
                dinamicMenu += "<li><a href='"+c.Link+"'>"+c.Name+"</a>";
@@ -48,7 +51,7 @@ namespace MinecControlReport.Controllers
                    dinamicMenu += "<ul>";
                    foreach (menuReport r in queryReport)
                    {
-                       dinamicMenu += "<li><a href='" + r.Link + "'>" + r.Name + "</a></li>";
+                       dinamicMenu += "<li><a href='" + url + "home/index/" + r.Link + "'>" + r.Name + "</a></li>";
                    }
 
                    dinamicMenu += "</ul>";

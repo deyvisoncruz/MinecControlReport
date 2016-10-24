@@ -16,6 +16,7 @@ namespace MinecControlReport.Reports
         const string REPORT_SERVER_USER = "WV_REPORT_SERVER_USER";
         const string REPORT_SERVER_PASSWORD = "WV_REPORT_SERVER_PASSWORD";
         const string REPORT_SERVER_DOMAIN = "WV_REPORT_SERVER_DOMAIN";
+        public string reportUrlRequest;
 
         internal class Credentials
         {
@@ -48,12 +49,8 @@ namespace MinecControlReport.Reports
         {
             if (!IsPostBack)
             {
-                /*if (subscriber == null)
-                {
-                    subscriber = new AssetSubscriber();
-                    subscriber.AssetConfigurationSubscription(ReportView_ConfigurationChanged);
-                }*/
-                ShowReport();
+                reportUrlRequest = Request.QueryString["report"];
+                ShowReport(reportUrlRequest);
             }
         }
 
@@ -65,7 +62,7 @@ namespace MinecControlReport.Reports
             }
         }*/
 
-        private void ShowReport()
+        private void ShowReport( string report)
         {
             try
             {
@@ -80,7 +77,7 @@ namespace MinecControlReport.Reports
 
                 // setting report path  
                 //Passing the Report Path with report name no need to add report extension   
-                rptViewer.ServerReport.ReportPath = "/DailyMining";
+                rptViewer.ServerReport.ReportPath = report;
 
                 if (!rptViewer.ServerReport.ReportPath.StartsWith("/"))
                 {
