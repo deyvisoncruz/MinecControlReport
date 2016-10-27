@@ -23,5 +23,6 @@ namespace MinecControlReport.Models
         public DbSet<kpis> kpis { get; set; }
         public DbSet<menu> menu { get; set; }
         public DbSet<menuReport> menuReport { get; set; }
+        public DbSet<Parameter> parameter { get; set; }
     }
 }

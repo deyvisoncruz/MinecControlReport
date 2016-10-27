@@ -44,11 +44,13 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
@@ -192,6 +194,7 @@
     <Compile Include="Controllers\KpisController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\MenuReportController.cs" />
+    <Compile Include="Controllers\ParameterController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -202,6 +205,7 @@
     <Compile Include="Models\menuList.cs" />
     <Compile Include="Models\menuReport.cs" />
     <Compile Include="Models\MinecControlReportContext.cs" />
+    <Compile Include="Models\Parameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\CustomReportCredentials.cs" />
     <Compile Include="Reports\ReportView.aspx.cs">
@@ -285,7 +289,9 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -341,6 +347,15 @@
     <Content Include="Views\MenuReport\Delete.cshtml" />
     <Content Include="Views\Shared\View1.cshtml" />
     <Content Include="Views\Home\MenuList.cshtml" />
+    <Content Include="Views\Parameter\Index.cshtml" />
+    <Content Include="Views\Parameter\Details.cshtml" />
+    <Content Include="Views\Parameter\Create.cshtml" />
+    <Content Include="Views\Parameter\Edit.cshtml" />
+    <Content Include="Views\Parameter\Delete.cshtml" />
+    <Content Include="Views\Account\RoleCreate.cshtml" />
+    <Content Include="Views\Account\RoleIndex.cshtml" />
+    <Content Include="Views\Account\RoleAddToUser.cshtml" />
+    <Content Include="Views\Account\DeleteRoleForUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
