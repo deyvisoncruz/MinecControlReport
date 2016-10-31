@@ -1,0 +1,33 @@
+﻿@model MinecControlReport.Models.menuRole
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>menuRole</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.menu.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.menu.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RolesRef)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RolesRef)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

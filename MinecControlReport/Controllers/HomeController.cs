@@ -5,9 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using MinecControlReport.Models;
 using MinecControlReport.Models;
+using MinecControlReport.Filters;
+using System.Web.Security;
 
 namespace MinecControlReport.Controllers
 {
+    [InitializeSimpleMembership]
     public class HomeController : Controller
     {
         private MineControlReportContext db = new MineControlReportContext();
@@ -16,7 +19,7 @@ namespace MinecControlReport.Controllers
         private List<subMenuList> subml = new List<subMenuList>();
 
 
-        public ActionResult Index(string Id = "DailyMining")
+        public ActionResult Index(string Id = "metas")
         {
             ViewBag.Message = "Bem vindo ao módulo de relatórios!";
             ViewBag.Report = "http://localhost:2672/Reports/ReportView.aspx?report="+Id;
@@ -41,9 +44,21 @@ namespace MinecControlReport.Controllers
         {
            var queryMenu = db.menu.OrderBy(p=>p.Order);
            string dinamicMenu = "";
-           string url = Request.Url.AbsoluteUri.ToString();
-           foreach (menu c in queryMenu)
+            string url = "http://localhost:2672";
+            var rolesArray = Roles.GetRolesForUser();
+            List<int> listMenuId = new List<int>();
+           
+            foreach (string s in rolesArray)
+            {
+                
+                listMenuId.AddRange(db.menuRole.Where(p => p.RolesRef == s).Select(p =>p.MenuRefId));
+               
+            }
+            foreach (menu c in queryMenu)
            {
+                
+
+               // if( listMenuId.Where(c=> c == )
                dinamicMenu += "<li><a href='"+c.Link+"'>"+c.Name+"</a>";
                var queryReport = db.menuReport.Where(p => p.MenuRefId == c.Id).OrderBy(p => p.Order);
                if (queryReport.Count() > 0)
@@ -51,7 +66,7 @@ namespace MinecControlReport.Controllers
                    dinamicMenu += "<ul>";
                    foreach (menuReport r in queryReport)
                    {
-                       dinamicMenu += "<li><a href='" + url + "home/index/" + r.Link + "'>" + r.Name + "</a></li>";
+                       dinamicMenu += "<li><a href='"+ url + "/home/index/" + r.Link + "'>" + r.Name + "</a></li>";
                    }
 
                    dinamicMenu += "</ul>";

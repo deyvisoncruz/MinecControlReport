@@ -2,10 +2,7 @@
 
 
 <ul class="drop_menu">
-                            @Html.Raw(ViewBag.Menu)
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>                            
-                                  
-                            <li>@Html.ActionLink("Nível/Acesso", "Index", "UserLevel")</li>                                       
-                            <li>@Html.ActionLink("Nível/Usuário", "Index", "UserAccountLevel")</li>     
-                            <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
-                        </ul>
+    <li>@Html.ActionLink("Home", "Index", "Home")</li>         
+    @Html.Raw(ViewBag.Menu)
+   
+</ul>

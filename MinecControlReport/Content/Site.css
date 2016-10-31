@@ -150,10 +150,10 @@ footer {
 }
 
     #login a {
-        background-color: #e2e2e2;
+        background-color: #FFCB08;
         margin-left: 10px;
         margin-right: 3px;
-        padding: 2px 3px;
+        padding: 6px 10px;
         text-decoration: none;
         color: black;
     }
@@ -793,7 +793,7 @@ tr.pager td {
    height:     75px;
    background: #FFFFFF;
    height: 800px;
-   width: 1000px;
+   width: 900px;
    text-align:center;
 }
 
@@ -814,7 +814,7 @@ background:#FFFFFF;
 padding:0;
 margin:0;
 list-style-type:none;
-height:30px;
+
 }
 .drop_menu li { float:left; }
 .drop_menu li a {

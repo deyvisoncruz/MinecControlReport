@@ -1,10 +1,23 @@
 ﻿@model MinecControlReport.Models.menu
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Index";
 }
 
-<h2>Edit</h2>
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            </br>
+            <hgroup class="title">
+
+                <h3>Edição de Menus </h3>
+            </hgroup>
+            </br>
+        </div>
+    </section>
+}
+
+
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()

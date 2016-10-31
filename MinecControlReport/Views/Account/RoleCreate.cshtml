@@ -2,12 +2,20 @@
     ViewBag.Title = "Role";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
 
-<div class="spacerBody">
-    <p>&nbsp;</p>
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            </br>
+            <hgroup class="title">
+
+                <h3>Criar Perfil</h3>
+            </hgroup>
+            </br>
+        </div>
+    </section>
+}
+
     @Html.ActionLink("Roles", "RoleIndex") | @Html.ActionLink("Add Role to User", "RoleAddToUser")
 <h2>Role Create</h2>
 
@@ -21,5 +29,8 @@
         @Html.TextBox("RoleName")
     </p>
     <input type="submit" value="Save" />
+    
+        @Html.ActionLink("Back to List", "RoleIndex")
+    
 }
-    </div>
+  

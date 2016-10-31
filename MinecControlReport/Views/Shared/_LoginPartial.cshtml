@@ -3,23 +3,28 @@
         Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
         @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
             @Html.AntiForgeryToken()
-            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+            <a href="javascript:document.getElementById('logoutForm').submit()" span style="background:#FFCB08">Log off</a>
            
         }
     </text>
-   <p></p>
+   <p> &nbsp;</p>
      <ul>
-        <li>@Html.ActionLink("Cadastro de Menus", "Index", "menu")</li>
-        <li>@Html.ActionLink("Cadastro de Reports", "Index", "menuReport")</li>
+        <li>@Html.ActionLink("Menus", "Index", "menu")</li>
+        <li>@Html.ActionLink("Reports", "Index", "menuReport")</li>
         <li>@Html.ActionLink("Metas", "Index", "Goal")</li>
         <li>@Html.ActionLink("Períodos", "Index", "PeriodTime")</li>
         <li>@Html.ActionLink("Kpi's", "Index", "Kpis")</li>    
-        <li>@Html.ActionLink("Parâmetros", "Index", "Parameter")</li>     
+        <li>@Html.ActionLink("Parâmetros", "Index", "Parameter")</li>  
+         <li>@Html.ActionLink("Perfil", "RoleIndex", "Account")</li> 
+         <li>@Html.ActionLink("Menu/Perfil", "Index", "MenuRole")</li> 
+         <li>@Html.ActionLink("Usuários", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+  
          
                 </ul>
 } else {
+    
     <ul>
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
-}
+        
+ }

@@ -2,9 +2,21 @@
     ViewBag.Title = "Role Listing";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            </br>
+            <hgroup class="title">
+
+                <h3>Cadastro de Perfil de Usuários </h3>
+            </hgroup>
+            </br>
+        </div>
+    </section>
+}
+
+
 
 <div class="spacerBody">
     @Html.ActionLink("Create New Role", "RoleCreate") | @Html.ActionLink("Add Role to User", "RoleAddToUser")

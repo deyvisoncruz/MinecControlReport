@@ -86,6 +86,7 @@ c:\users\deyvison\documents\visual studio 2012\Projects\MinecControlReport\Minec
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\MinecControlReport.dll
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\MinecControlReport.pdb
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\Antlr3.Runtime.dll
+C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\Datatables.Mvc.dll
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\DotNetOpenAuth.AspNet.dll
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\DotNetOpenAuth.Core.dll
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\DotNetOpenAuth.OAuth.Consumer.dll
@@ -114,6 +115,8 @@ C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\Sys
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\WebGrease.dll
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\WebMatrix.Data.dll
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\WebMatrix.WebData.dll
+C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\Datatables.Mvc.pdb
+C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\Datatables.Mvc.xml
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\Newtonsoft.Json.xml
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\EntityFramework.xml
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\System.Net.Http.Formatting.xml
@@ -167,6 +170,4 @@ C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\zh-
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\obj\Debug\MinecControlReport.dll
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\obj\Debug\MinecControlReport.pdb
-C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\Datatables.Mvc.dll
-C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\Datatables.Mvc.pdb
-C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\Datatables.Mvc.xml
+C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\obj\Debug\MinecControlReport.csprojResolveAssemblyReference.cache

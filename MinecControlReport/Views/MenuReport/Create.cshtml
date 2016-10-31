@@ -1,10 +1,23 @@
 ﻿@model MinecControlReport.Models.menuReport
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Index";
 }
 
-<h2>Create</h2>
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            </br>
+            <hgroup class="title">
+
+                <h3>Criação de Menu de Reports </h3>
+            </hgroup>
+            </br>
+        </div>
+    </section>
+}
+
+
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()

@@ -24,5 +24,8 @@ namespace MinecControlReport.Models
         public DbSet<menu> menu { get; set; }
         public DbSet<menuReport> menuReport { get; set; }
         public DbSet<Parameter> parameter { get; set; }
+        public DbSet<menuRole> menuRole { get; set; }
+        public DbSet<PeriodTime> periodTime { get; set; }
+        public DbSet<goal> goal { get; set; }
     }
 }

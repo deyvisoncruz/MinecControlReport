@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Mine Control R</title>
+        <title>Mine Control Repots</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
         <meta name="viewport" content="width=device-width" />
@@ -22,17 +22,19 @@
                     <section id="login">
                         @Html.Partial("_LoginPartial")
                     </section>
+                </div><p> &nbsp;</p>
+                <div class="float-right">
                     <nav>
-                       <div class="drop">
-                        @{Html.RenderAction("MenuList", "Home");}
-                           </div>
+                        <div class="drop">
+                            @{Html.RenderAction("MenuList", "Home");}
+                        </div>
                     </nav>
                 </div>
                 
             </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
+        </header><p> &nbsp;</p>
+        <div id="body"><p> &nbsp;</p>
+            @RenderSection("featured", required: false) 
             <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
             </section>

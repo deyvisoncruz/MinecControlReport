@@ -2,11 +2,21 @@
     ViewBag.Title = "Role Add To User";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
-<div class="spacerBody">
-    <p>&nbsp;</p>
+
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            </br>
+            <hgroup class="title">
+
+                <h3>Associção de Perfil </h3>
+            </hgroup>
+            </br>
+        </div>
+    </section>
+}
+
     @Html.ActionLink("Create New Role", "RoleCreate") | @Html.ActionLink("Roles", "RoleIndex")
         
 <h2>Role Add to User</h2>
@@ -45,7 +55,7 @@
                 </ol>
     </text>
 }
-        </div>
+       
 
  <h3>Delete A User from a Role</h3>
 
