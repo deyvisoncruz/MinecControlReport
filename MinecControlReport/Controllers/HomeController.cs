@@ -56,22 +56,24 @@ namespace MinecControlReport.Controllers
             }
             foreach (menu c in queryMenu)
            {
-                
 
-               // if( listMenuId.Where(c=> c == )
-               dinamicMenu += "<li><a href='"+c.Link+"'>"+c.Name+"</a>";
-               var queryReport = db.menuReport.Where(p => p.MenuRefId == c.Id).OrderBy(p => p.Order);
-               if (queryReport.Count() > 0)
+
+               if (listMenuId.Contains(c.Id))
                {
-                   dinamicMenu += "<ul>";
-                   foreach (menuReport r in queryReport)
+                   dinamicMenu += "<li><a href='" + c.Link + "'>" + c.Name + "</a>";
+                   var queryReport = db.menuReport.Where(p => p.MenuRefId == c.Id).OrderBy(p => p.Order);
+                   if (queryReport.Count() > 0)
                    {
-                       dinamicMenu += "<li><a href='"+ url + "/home/index/" + r.Link + "'>" + r.Name + "</a></li>";
-                   }
+                       dinamicMenu += "<ul>";
+                       foreach (menuReport r in queryReport)
+                       {
+                           dinamicMenu += "<li><a href='" + url + "/home/index/" + r.Link + "'>" + r.Name + "</a></li>";
+                       }
 
-                   dinamicMenu += "</ul>";
+                       dinamicMenu += "</ul>";
+                   }
+                   dinamicMenu += "</li>";
                }
-               dinamicMenu += "</li>";
            }
            ViewBag.menu = dinamicMenu;
            return PartialView();

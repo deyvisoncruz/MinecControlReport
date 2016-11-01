@@ -20,6 +20,8 @@ namespace MinecControlReport.Controllers
         //
         // GET: /Account/Login
 
+        private MineControlReportContext db = new MineControlReportContext();
+
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
@@ -432,9 +434,32 @@ namespace MinecControlReport.Controllers
        // [Authorize(Roles = "Admin")]
         public ActionResult RoleDelete(string RoleName)
         {
+            string[] usersInRole;
+            List<menuRole> md = new List<menuRole>();
+            
+            try
+            {
+                usersInRole = Roles.GetUsersInRole(RoleName);
+                md = db.menuRole.Where(x => x.RolesRef == RoleName).ToList();
 
-            Roles.DeleteRole(RoleName);
-            // ViewBag.ResultMessage = "Role deleted succesfully !";
+                foreach (menuRole mr in md)
+                {
+                    db.menuRole.Remove(mr);
+                    db.SaveChanges();
+                }
+                foreach (string s in usersInRole)
+                {
+                    Roles.RemoveUserFromRole(s, RoleName);
+                }
+                Roles.DeleteRole(RoleName);
+               // ViewBag.ResultMessage = "Role deleted succesfully !";
+                
+            }
+            catch
+            {
+                ViewBag.ResultMessage = "Erro ao remover Perfil !";
+            }
+            
 
 
             return RedirectToAction("RoleIndex", "Account");
