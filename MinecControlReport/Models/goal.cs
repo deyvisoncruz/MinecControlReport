@@ -19,28 +19,23 @@ namespace MinecControlReport.Models
         public int Id { get; set; }
 
 
-        [Required]
-        public String Name { get; set; }
-
-
 
         public int KpiId { get; set; }
 
         [ForeignKey("KpiId")]
         public kpis kpi { get; set; }
 
-        public int PeriodTimeId { get; set; }
 
-        [ForeignKey("PeriodTimeId")]
-        public PeriodTime Pt { get; set; }
-
-
-        public string Entity { get; set; }
-
-        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime StartDate { get; set; }
 
-        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime EndDate { get; set; }
+
+
     }
+
+    
 }
