@@ -4,13 +4,25 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            </br>
+            <hgroup class="title">
+
+                <h3>Cadastros de Metas </h3>
+            </hgroup>
+            </br>
+        </div>
+    </section>
+}
+
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-    <fieldset>
+    <fieldset >
         <legend>goal</legend>
 
         <div class="editor-label">
@@ -46,33 +58,12 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-<table id="Deals">
-    <tr>
-        <td>id</td>
-        <td>nome</td>
-        <td>teste</td>
-        <td>tese2</td>
-    </tr>
-     <tr>
-        <td>123</td>
-         <td>sdf</td>
-         <td>fsafddsf</td>
-         <td>asdf</td>
-    </tr>
-     <tr>
-        <td>123</td>
-         <td>sadf</td>
-         <td>asdfasdf</td>
-         <td>adsfdf</td>
-    </tr>
-     <tr>
-        <td>213</td>
-         <td>adsf</td>
-         <td>afadsfaf</td><td>asdfdsaf</td>
-    </tr>
-</table>
+
 @section Scripts {
     @Scripts.Render("~/bundles/jquery")
+
+    @Scripts.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/bootstrap")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/jqueryui")
     @Styles.Render("~/Content/themes/base/css")

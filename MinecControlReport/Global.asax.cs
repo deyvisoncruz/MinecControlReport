@@ -8,7 +8,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Data.Entity;
 using MinecControlReport.Models;
-using MinecControlReport.Models;
+using MySql.Data;
 
 
 namespace MinecControlReport
@@ -29,6 +29,9 @@ namespace MinecControlReport
             AuthConfig.RegisterAuth();
             //adicionado para ajudar quando alteramos uma estrutura no EntityFramework
             Database.SetInitializer<MineControlReportContext>(new DropCreateDatabaseIfModelChanges<MineControlReportContext>());
+            //Database.SetInitializer<MineControlReportContext>(new CreateDatabaseIfNotExists<MineControlReportContext>());
+
+            
         }
     }
 }

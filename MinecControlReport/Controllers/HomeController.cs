@@ -19,10 +19,24 @@ namespace MinecControlReport.Controllers
         private List<subMenuList> subml = new List<subMenuList>();
 
 
-        public ActionResult Index(string Id = "metas")
+        public ActionResult Index(string Id = "metas", string type="1")
         {
+
             ViewBag.Message = "Bem vindo ao módulo de relatórios!";
-            ViewBag.Report = "http://localhost:2672/Reports/ReportView.aspx?report="+Id;
+           // Id = Id.Replace(" ","
+            if (Id != "metas")
+            {
+                if (type == "1")
+                    ViewBag.Report = "http://localhost:2672/Reports/ReportView.aspx?report=" + Id;
+                else
+                    ViewBag.Report = "http://localhost/MC/reports/" + Id+ ".aspx"; ;
+            }
+            else
+            {
+                ViewBag.Report = "http://localhost:2672/Reports/ReportView.aspx?report=" + Id;
+            }
+
+
             return View();
         }
 
@@ -67,7 +81,10 @@ namespace MinecControlReport.Controllers
                        dinamicMenu += "<ul>";
                        foreach (menuReport r in queryReport)
                        {
-                           dinamicMenu += "<li><a href='" + url + "/home/index/" + r.Link + "'>" + r.Name + "</a></li>";
+                          
+                                dinamicMenu += "<li><a href='" + url + "/home/index/" + r.Link + "/" + r.type + "'>" + r.Name + "</a></li>";
+                         
+
                        }
 
                        dinamicMenu += "</ul>";

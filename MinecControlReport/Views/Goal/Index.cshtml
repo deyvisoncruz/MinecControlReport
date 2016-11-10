@@ -4,8 +4,18 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            </br>
+            <hgroup class="title">
 
+                <h3>Metas </h3>
+            </hgroup>
+            </br>
+        </div>
+    </section>
+}
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -29,7 +39,7 @@
             @Html.DisplayFor(modelItem => item.kpi.KpiName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.StartDate)
+            @Html.DisplayFor(modelItem => item.StartDate,"{0:dd/MM/yyyy}")
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EndDate)

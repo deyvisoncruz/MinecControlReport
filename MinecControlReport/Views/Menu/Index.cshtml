@@ -20,7 +20,11 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
+
+<script type="text/javascript"   > 
+   
+</script>
+<table id="example">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -54,3 +58,13 @@
 }
 
 </table>
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+
+    @Scripts.Render("~/Content/DataTables-1.10.12")
+    @Styles.Render("~/Content/DataTables-1.10.12")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/themes/base/css")
+   
+}

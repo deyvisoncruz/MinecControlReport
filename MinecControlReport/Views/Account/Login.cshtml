@@ -1,15 +1,25 @@
 ﻿@model MinecControlReport.Models.LoginModel
 
 @{
-    ViewBag.Title = "Log in";
+    ViewBag.Title = "Login";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            </br>
+            <hgroup class="title">
+
+                <h3>Login </h3>
+            </hgroup>
+            </br>
+        </div>
+    </section>
+}
+
 
 <section id="loginForm">
-<h2>Use a local account to log in.</h2>
+<h2>Use um usuário do Mine Control para efetuar  login.</h2>
 @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
@@ -35,13 +45,13 @@
         <input type="submit" value="Log in" />
     </fieldset>
     <p>
-        @Html.ActionLink("Register", "Register") if you don't have an account.
+        @Html.ActionLink("Registrar", "Register") Se não tem um usuário, você pode registrar um por aqui ou pelo Manager.
     </p>
 }
 </section>
 
 <section class="social" id="socialLoginForm">
-    <h2>Use another service to log in.</h2>
+    <h2>Use um outro serviço para log in.</h2>
     @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
 </section>
 

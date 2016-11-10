@@ -170,3 +170,4 @@ C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\zh-
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\obj\Debug\MinecControlReport.dll
 C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\obj\Debug\MinecControlReport.pdb
+C:\Users\deyvison\Documents\GitHub\MinecControlReport\MinecControlReport\obj\Debug\MinecControlReport.csprojResolveAssemblyReference.cache

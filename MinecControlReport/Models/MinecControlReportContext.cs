@@ -19,6 +19,10 @@ namespace MinecControlReport.Models
         {
         }
 
+        public static MineControlReportContext Create()
+        {
+            return new MineControlReportContext();
+        }
 
         public DbSet<kpis> kpis { get; set; }
         public DbSet<menu> menu { get; set; }

@@ -12,7 +12,5 @@
             dateFormat: "dd/mm/yy"
         });
 
-      //  $(document).ready(function () {
-        //    $('#Deals').DataTable();
-        //});
+       
     });

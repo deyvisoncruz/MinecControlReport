@@ -77,7 +77,7 @@ h2 {
 
 h3 {
     font-size: 1.2em;
-    color: #FFFFFF;
+    
 }
 
 h4 {
@@ -439,6 +439,7 @@ fieldset {
     border: none;
     margin: 0;
     padding: 0;
+
 }
 
     fieldset legend {
@@ -858,3 +859,8 @@ background-color:#e2e2e2;
 }
 .drop_menu li:hover ul li a:hover { background:#999; }
 
+#edit {
+   width:500px;
+   padding:5px;
+   background: #e2e2e2;
+}

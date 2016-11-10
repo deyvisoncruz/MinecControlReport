@@ -14,6 +14,7 @@ namespace MinecControlReport
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery.datepicker.js",
+                        
                         "~/Scripts/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -41,19 +42,15 @@ namespace MinecControlReport
                         "~/Content/themes/base/jquery.ui.theme.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                    "~/Scripts/bootstrap.min.js"));
+                    "~/Scripts/bootstrap.min.js",
+                     "~/Scripts/DataTables-1.10.12/media/js/jquery.dataTables.js"));
 
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
-                     "~/Content/bootstrap.min.css",                   
-                     "~/Content/bootstrap-theme.min.css"));
+                     "~/Content/bootstrap.min.css",
+                     "~/Content/bootstrap-theme.min.css",
+                       "~/Scripts/DataTables-1.10.12/media/css/jquery.dataTables.css"));
 
-
-         /*   bundles.Add(new ScriptBundle("~/Scripts/DataTables-1.8.2").Include(
-                  "~/Scripts/DataTables-1.8.2/media/js/jquery.dataTables.js"));
-            
-            bundles.Add(new StyleBundle("~/Scripts/DataTables-1.8.2").Include(
-                  "~/Scripts/DataTables-1.8.2/media/css/jquery.dataTables.css"));*/
-        
         }
+          
     }
 }
